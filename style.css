@@ -1,0 +1,101 @@
+.app {
+  /*background-color: #F5F5F5;
+  border: 1px solid #333;
+  color: #333;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#addNew button {
+  background-color: #90caf9;  
+  border: none; /* Remove border */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Add some padding */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Display as inline-block */
+  font-size: 16px; /* Set font size */
+  margin: 4px 2px; /* Add some margin */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Add cursor on hover */
+}
+
+#addNew button:hover {
+  background-color: #5cadee;  
+  color: #fff;  
+}
+
+
+#form {
+  background-color: #f7f7f7;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.modal-header h5 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-control:focus {
+  outline: 0;
+  border-color: #97bae0;
+  box-shadow: 0px 0px 5px rgba(215, 215, 215, 0.3);
+}
+
+.text-danger {
+  font-size: 14px;
+  color: #ff4d4d;
+  margin-top: 5px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.btn {
+  border: 1px solid #abc1da;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #5a9ce3;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #9ac2ed;
+  color: #fff;
+}
+
+.btn:active,
+.btn:focus {
+  outline: 0;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  position:absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
