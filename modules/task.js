@@ -1,7 +1,7 @@
 // this makes object and pushes it to array and local storage
 
-let data = [{}];
 let acceptData = () => {
+
   data.push({
     text: taskNameInput.value,
     description: descriptionInput.value,
@@ -15,3 +15,4 @@ let acceptData = () => {
 
   createTasks();
 };
+

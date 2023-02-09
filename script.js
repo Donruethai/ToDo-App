@@ -114,25 +114,6 @@ let formValidation = () => {
 };
 
 
-
-let data = [{}];
-// this makes object and pushes it to array and local storage
-let acceptData = () => {
-
-  data.push({
-    text: taskNameInput.value,
-    description: descriptionInput.value,
-    assignee: assignedToInput.value,
-    date: dueDateInput.value,
-    status: statusInput.value,
-  });
-
-  localStorage.setItem("data", JSON.stringify(data));
-
-  createTasks();
-
-};
-
 // this makes html card for each task
 let createTasks = () => {
   tasks.innerHTML = "";
@@ -158,7 +139,6 @@ let createTasks = () => {
 };
 
 
-
 // delete function on trash icon
 
 let deleteTask = (e) => {
@@ -168,16 +148,17 @@ let deleteTask = (e) => {
 };
 
 
-// edit 
+// edit task
 let editTask = (e) => {
-  let selectedTask = e.parentElement.parentElement;
-  // taskNameInput.value = selectedTask.children[0].innerHTML;
-  descriptionInput.value = selectedTask.children[0].innerHTML;
-  assignedToInput.value = selectedTask.children[2].innerHTML;
-  dueDateInput.value = selectedTask.children[1].innerHTML;
-  statusInput.value = selectedTask.children[3].innerHTML;
+  let selectedTask = e.parentElement.parentElement.parentElement;
+  //taskNameInput.value = selectedTask.children[0].children[0].innerHTML.split(': ')[1];
+  descriptionInput.value = selectedTask.children[1].children[0].innerHTML.split(': ')[1];
+  assignedToInput.value = selectedTask.children[1].children[2].innerHTML.split(': ')[1];
+  dueDateInput.value = selectedTask.children[1].children[1].innerHTML.split(': ')[1];
+  statusInput.value = selectedTask.children[1].children[3].innerHTML.split(': ')[1];
   deleteTask(e);
 };
+
 
 
 // markdone function 
@@ -201,8 +182,6 @@ let resetForm = () => {
 })();
 
 
-
-
 // clears all the inputs
 const clearForms = () => {
   document.getElementById("form").reset();
@@ -224,11 +203,13 @@ const resetButton = document.querySelector("#btnReset");
 resetButton.addEventListener("click", clearForms);
 
 
-
 // close button for modal form clears the form
 const close = document.querySelector("#btnClose");
-close.addEventListener("click", function () {
-  clearForms();
-});
+if (close) {
+  close.addEventListener("click", function () {
+    clearForms();
+  });
+}
+
 
 
