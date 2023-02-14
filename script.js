@@ -9,7 +9,7 @@ let tasks = document.getElementById("tasks");
 let add = document.getElementById("add");
 
 
-//  looks for event button press submit and runs the form validation function
+// looks for event button press submit and runs the form validation function
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   formValidation();
@@ -19,7 +19,7 @@ form.addEventListener("submit", (e) => {
 let formValidation = () => {
   if (taskNameInput.value.length < 8) {
     document.getElementById("name-task-error").innerHTML =
-      "Please enter a task name thats at least 8 characters long";
+      "Please enter at least 8 characters long";
     document.getElementById("name-task-input").style.borderColor = "red";
     document.getElementById("name-task-input").placeholder = "";
     document.getElementById("name-task-input").classList.add("is-invalid");
@@ -32,49 +32,36 @@ let formValidation = () => {
 
   if (descriptionInput.value.length < 15) {
     document.getElementById("description-task-error").innerHTML =
-      "Please enter a description thats at least 15 characters long";
+      "Please enter at least 15 characters long";
     document.getElementById("description-task-input").style.borderColor = "red";
     document.getElementById("description-task-input").placeholder = "";
-    document
-      .getElementById("description-task-input")
-      .classList.add("is-invalid");
+    document.getElementById("description-task-input").classList.add("is-invalid");
   } else {
-    document
-      .getElementById("description-task-input")
-      .classList.remove("is-invalid");
+    document.getElementById("description-task-input").classList.remove("is-invalid");
     document.getElementById("description-task-input").classList.add("is-valid");
-    document.getElementById("description-task-input").style.borderColor =
-      "green";
+    document.getElementById("description-task-input").style.borderColor = "green";
     document.getElementById("description-task-error").innerHTML = "";
   }
 
   if (assignedToInput.value.length < 3) {
     document.getElementById("assigned-to-task-error").innerHTML =
-      "Please enter a name thats at least 3 characters long";
+      "Please enter at least 3 characters long";
     document.getElementById("assigned-to-task-input").style.borderColor = "red";
     document.getElementById("assigned-to-task-input").placeholder = "";
-    document
-      .getElementById("assigned-to-task-input")
-      .classList.add("is-invalid");
+    document.getElementById("assigned-to-task-input").classList.add("is-invalid");
   } else {
-    document
-      .getElementById("assigned-to-task-input")
-      .classList.remove("is-invalid");
+    document.getElementById("assigned-to-task-input").classList.remove("is-invalid");
     document.getElementById("assigned-to-task-input").classList.add("is-valid");
-    document.getElementById("assigned-to-task-input").style.borderColor =
-      "green";
+    document.getElementById("assigned-to-task-input").style.borderColor = "green";
     document.getElementById("assigned-to-task-error").innerHTML = "";
   }
   if (dueDateInput.value < new Date().toISOString().split("T")[0]) {
     document.getElementById("due-date-task-input").style.borderColor = "red";
-    document.getElementById("due-date-task-error").innerHTML =
-      "Due date must be today or later";
+    document.getElementById("due-date-task-error").innerHTML = "Due date must be today or later";
     document.getElementById("due-date-task-input").placeholder = "";
     document.getElementById("due-date-task-input").classList.add("is-invalid");
   } else {
-    document
-      .getElementById("due-date-task-input")
-      .classList.remove("is-invalid");
+    document.getElementById("due-date-task-input").classList.remove("is-invalid");
     document.getElementById("due-date-task-input").classList.add("is-valid");
     document.getElementById("due-date-task-input").style.borderColor = "green";
     document.getElementById("due-date-task-error").innerHTML = "";
@@ -84,8 +71,7 @@ let formValidation = () => {
 
   if (statusInput.value === "0") {
     document.getElementById("status-task-input").style.borderColor = "red";
-    document.getElementById("status-task-error").innerHTML = "";
-      "Please select a status";
+    document.getElementById("status-task-error").innerHTML = ""; "Please select a status";
     document.getElementById("status-task-input").classList.add("is-invalid");
   } else {
     document.getElementById("status-task-input").classList.remove("is-invalid");
